@@ -11,6 +11,7 @@
     <title>CRUD MINI PROJECT</title>
   </head>
   <body>
+    
 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -27,7 +28,8 @@
 
 
 
-         <forms action="/insert" method="post"> {% csrf_token %}
+         <forms action="/Insert" method="post">
+          {% csrf_token %}
          
             <div class="form group">
               <input type="text" class = "form-control mt-2"  placeholder="Enter the Employee name"  name="name" required>
@@ -73,13 +75,15 @@
             </tr>
           </thead>
           <tbody>
-            for
+            {% for d in data %}
             <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
+              <th scope="row">1{{d.id}}</th>
+              <td>{{d.name}}</td>
+              <td>{{d.email}}</td>
+              <td>{{d.age}}</td>
+              <td>{{d.gender}}</td>
+             <td><button type="button" class="btn btn-outline-primary">primary</button>
+             </tr></td> 
          
           </tbody>
         </table>
